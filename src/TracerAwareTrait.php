@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Psr\Tracing;
 
 /**
@@ -12,10 +14,5 @@ trait TracerAwareTrait
     public function setTracer(TracerInterface $tracer): void
     {
         $this->tracer = $tracer;
-    }
-
-    public function getTracer(): TracerInterface
-    {
-        return $this->tracer;
     }
 }
