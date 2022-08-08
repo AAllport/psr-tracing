@@ -11,9 +11,10 @@ namespace Psr\Tracing;
 interface TracerInterface
 {
     /**
-     * Creates and set the start timestamp of a new Span.
+     * Creates a new Span.
+     *
      * This will NOT set the newly created span as the "current" span:
      * {@see SpanInterface::activate} should be called.
      */
-    public function startSpan(string $spanName): SpanInterface;
+    public function createSpan(string $spanName): SpanInterface;
 }
