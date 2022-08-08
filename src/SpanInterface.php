@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Psr\Tracing;
 
+use Stringable;
+
 /**
  * A span represents a single operation within a trace.
  * NOTE: This object is MUTABLE.
@@ -12,15 +14,16 @@ interface SpanInterface
 {
     /**
      * Sets a single attribute on the span.
-     * NOTE: not sure about "mixed" type hint on $value parameter.
-     * Should it be scalar|Stringable ? An array is acceptable here?
+     * NOTE: value MUST be a scalar (or stringable) value, nesting is supported via key "dot notation"
      *
      * @return $this
      */
-    public function setAttribute(string $key, mixed $value): SpanInterface;
+    public function setAttribute(string $key, string|int|float|bool|Stringable $value): SpanInterface;
 
     /**
      * Sets multiple attributes on this span.
+     *
+     * @param iterable<string, string|int|float|bool|Stringable> $attributes
      *
      * @return $this
      */
@@ -28,7 +31,7 @@ interface SpanInterface
 
     /**
      * Sets the current span as the "current" span.
-     * NOTE: Is this ok with fibers?
+     * This MUST start the span if not already started.
      *
      * @return $this
      */
