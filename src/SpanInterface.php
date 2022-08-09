@@ -30,6 +30,13 @@ interface SpanInterface
     public function setAttributes(iterable $attributes): SpanInterface;
 
     /**
+     * Starts the current span.
+     *
+     * @return $this
+     */
+    public function start(): SpanInterface;
+
+    /**
      * Sets the current span as the "current" span.
      * This MUST start the span if not already started.
      *
@@ -44,9 +51,7 @@ interface SpanInterface
     public function finish(): void;
 
     /**
-     * Returns the traceparent identifier (for distributed tracing).
-     * If the implementor does not want to support distributed tracing, this method
-     * MUST always return null.
+     * Returns distributed tracing headers, to allow trace correlation across service boundaries.
      */
-    public function toTraceparent(): ?string;
+    public function toTraceContextHeaders(): array;
 }
