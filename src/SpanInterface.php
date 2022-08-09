@@ -12,6 +12,10 @@ use Stringable;
  */
 interface SpanInterface
 {
+    public const STATUS_UNSET = 0;
+    public const STATUS_ERROR = 100;
+    public const STATUS_OK = 200;
+
     /**
      * Sets a single attribute on the span.
      * NOTE: value MUST be a scalar (or stringable) value, nesting is supported via key "dot notation"
@@ -43,6 +47,14 @@ interface SpanInterface
      * @return $this
      */
     public function activate(): SpanInterface;
+
+    /**
+     * Set the status of this span to one of self::STATUS_*
+     * Description is optional, and MAY be used to describe an error status.
+     *
+     * @return $this
+     */
+    public function setStatus(int $status, ?string $description): SpanInterface;
 
     /**
      * Marks this span as ended (sets the end timestamp) and pops out the
