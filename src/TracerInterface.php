@@ -17,4 +17,9 @@ interface TracerInterface
      * {@see SpanInterface::activate} should be called.
      */
     public function createSpan(string $spanName): SpanInterface;
+
+    /**
+     * Get the id of the current active trace.
+     */
+    public function getCurrentTraceId(): string;
 }
