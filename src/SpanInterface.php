@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Psr\Tracing;
 
 use Stringable;
+use Throwable;
 
 /**
  * A span represents a single operation within a trace.
@@ -55,6 +56,14 @@ interface SpanInterface
      * @return $this
      */
     public function setStatus(int $status, ?string $description): SpanInterface;
+
+    /**
+     * Record an exception against this span.
+     *
+     * @param Throwable $t
+     * @return $this
+     */
+    public function addException(Throwable $t): SpanInterface;
 
     /**
      * Marks this span as ended (sets the end timestamp) and pops out the
