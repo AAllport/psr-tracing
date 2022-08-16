@@ -59,6 +59,7 @@ interface SpanInterface
 
     /**
      * Record an exception against this span.
+     * This MUST NOT modify the span's outcome.
      *
      * @param Throwable $t
      * @return $this
