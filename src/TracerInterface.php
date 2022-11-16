@@ -22,4 +22,15 @@ interface TracerInterface
      * Get the id of the current active trace.
      */
     public function getCurrentTraceId(): string;
+
+    /**
+     * Get an instance of the current span
+     */
+    public function getRootSpan(): SpanInterface;
+
+   /**
+    * Get an instance of the currently active span
+    */
+    public function getCurrentSpan(): SpanInterface;
+
 }
