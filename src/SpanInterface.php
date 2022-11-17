@@ -26,6 +26,16 @@ interface SpanInterface
     public function setAttribute(string $key, string|int|float|bool|Stringable $value): SpanInterface;
 
     /**
+     * Retrieves a single attribute from the soan
+     * nesting is supported via key "dot notation"
+     *
+     * @param string $key
+     *
+     * @return string|int|float|bool|Stringable
+     */
+    public function getAttribute(string $key): string|int|float|bool|Stringable;
+
+    /**
      * Sets multiple attributes on this span.
      *
      * @param iterable<string, string|int|float|bool|Stringable> $attributes
@@ -76,4 +86,16 @@ interface SpanInterface
      * Returns distributed tracing headers, to allow trace correlation across service boundaries.
      */
     public function toTraceContextHeaders(): array;
+
+    /**
+     * Returns the parent span
+     * @return SpanInterface
+     */
+    public function getParent(): SpanInterface;
+
+    /**
+     * Returns the child spans
+     * @return array<SpanInterface>
+     */
+    public function getChildren(): array;
 }
