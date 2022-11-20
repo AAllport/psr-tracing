@@ -26,7 +26,7 @@ interface SpanInterface
     public function setAttribute(string $key, string|int|float|bool|Stringable $value): SpanInterface;
 
     /**
-     * Retrieves a single attribute from the soan
+     * Retrieves a single attribute from the span
      * nesting is supported via key "dot notation"
      *
      * @param string $key
@@ -43,6 +43,13 @@ interface SpanInterface
      * @return $this
      */
     public function setAttributes(iterable $attributes): SpanInterface;
+
+    /**
+     * Gets all attributes on this span.
+     *
+     * @return iterable<string, string|int|float|bool|Stringable>
+     */
+    public function getAttributes(): iterable;
 
     /**
      * Starts the current span.
