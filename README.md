@@ -12,8 +12,8 @@ More  information
 -----------------
 
 * [PSR-22 Draft Spec](https://docs.google.com/document/d/1MhzkkklYJ72KimbL_Hbh7LnMgi8YMYzSy2N3Tu2NrxY/edit?usp=sharing)
-* [PSR-22 Draft Utils](aallport/psr-tracing-utils)
-* [OpenTracing Adapter demo](brettmc/psr22-demo)
+* [PSR-22 Draft Utils](https://github.com/aallport/psr-tracing-utils)
+* [OpenTracing Adapter demo](https://github.com/brettmc/psr22-demo)
 
 Installation
 ------------
