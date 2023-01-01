@@ -8,6 +8,13 @@ Note that this is not a logger of its own.
 It is merely an interface that describes a tracer.
 See the specification for more details.
 
+More  information
+-----------------
+
+* [PSR-22 Draft Spec](https://docs.google.com/document/d/1MhzkkklYJ72KimbL_Hbh7LnMgi8YMYzSy2N3Tu2NrxY/edit?usp=sharing)
+* [PSR-22 Draft Utils](aallport/psr-tracing-utils)
+* [OpenTracing Adapter demo](brettmc/psr22-demo)
+
 Installation
 ------------
 
