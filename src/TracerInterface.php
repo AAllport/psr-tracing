@@ -24,7 +24,7 @@ interface TracerInterface
     public function getCurrentTraceId(): string;
 
     /**
-     * Get an instance of the current span
+     * Get an instance of the root span
      */
     public function getRootSpan(): SpanInterface;
 
