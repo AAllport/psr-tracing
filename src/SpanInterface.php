@@ -73,6 +73,15 @@ interface SpanInterface
     public function finish(): void;
 
     /**
+     * Create a new child span.
+     * This is similar to {@see TracerInterface::createSpan}, but MUST set the parent to the current span.
+     *
+     * @param string $spanName
+     * @return SpanInterface
+     */
+    public function createChild(string $spanName): SpanInterface;
+
+    /**
      * Returns distributed tracing headers, to allow trace correlation across service boundaries.
      */
     public function toTraceContextHeaders(): array;
