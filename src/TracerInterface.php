@@ -12,6 +12,8 @@ interface TracerInterface
 {
     /**
      * Creates a new Span.
+     * The span's parent wil be determined by the current active span.
+     * To create a span with a specific parent, use the {@see SpanInterface::createChild} method.
      *
      * This will NOT set the newly created span as the "current" span:
      * {@see SpanInterface::activate} should be called.
