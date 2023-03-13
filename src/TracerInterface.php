@@ -28,11 +28,11 @@ interface TracerInterface
     /**
      * Get an instance of the root span
      */
-    public function getRootSpan(): SpanInterface;
+    public function getRootSpan(): ?SpanInterface;
 
    /**
     * Get an instance of the currently active span
     */
-    public function getCurrentSpan(): SpanInterface;
+    public function getCurrentSpan(): ?SpanInterface;
 
 }

@@ -23,7 +23,7 @@ interface SpanInterface
      *
      * @return $this
      */
-    public function setAttribute(string $key, string|int|float|bool|Stringable $value): SpanInterface;
+    public function setAttribute(string $key, null|string|int|float|bool|Stringable $value): SpanInterface;
 
     /**
      * Retrieves a single attribute from the span
@@ -31,9 +31,9 @@ interface SpanInterface
      *
      * @param string $key
      *
-     * @return string|int|float|bool|Stringable
+     * @return null|string|int|float|bool|Stringable
      */
-    public function getAttribute(string $key): string|int|float|bool|Stringable;
+    public function getAttribute(string $key): null|string|int|float|bool|Stringable;
 
     /**
      * Sets multiple attributes on this span.
