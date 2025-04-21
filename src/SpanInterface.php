@@ -104,10 +104,10 @@ interface SpanInterface
     public function toTraceContextHeaders(): array;
 
     /**
-     * Returns the parent span
-     * @return SpanInterface
+     * Returns the parent span, or NULL if the span is the root span.
+     * @return ?SpanInterface
      */
-    public function getParent(): SpanInterface;
+    public function getParent(): ?SpanInterface;
 
     /**
      * Returns the child spans
